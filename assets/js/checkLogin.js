@@ -8,17 +8,17 @@ const saludo = document.querySelector("#saludo");
 export const checkLogin = (user) => {
 
     if(user) {
-        logeedIn.forEach((element) => (element.style.display = "block"));
-        logeedOut.forEach((element) => (element.style.display = "none"));
+        loggedIn.forEach((element) => (element.style.display = "block"));
+        loggedOut.forEach((element) => (element.style.display = "none"));
 
         mainContainer.style.display = "block";
         saludo.textContent = `Bienvenido@ ${user.email}`;
 
-        setupTasks();
+        setupTasks(user);
 
     } else {
-        logeedOut.forEach((element) => (element.style.display = "block"));
-        logeedIn.forEach((element) => (element.style.display = "none"));
+        loggedOut.forEach((element) => (element.style.display = "block"));
+        loggedIn.forEach((element) => (element.style.display = "none"));
 
         mainContainer.style.display = "none";
         saludo.textContent = "";
